@@ -3,7 +3,7 @@ import React from "react";
 function Navbar(){
     return (
         <>
-            <nav className='bg-blue-950 text-white p-3 md:mx-15 md:mt-5 flex md:rounded-lg font-bold'>
+            <nav className='bg-blue-950 text-white p-3 md:mx-15 md:mt-5 flex md:rounded-lg font-semibold'>
                 <div className='w-11/12 md:w-6/12'>InvenHub</div>
                 <div className='flex md:gap-10 md:ml-auto'>
                     <div className='hidden md:block hover:text-red-500 hover:underline'><a href="">About Us</a></div>
