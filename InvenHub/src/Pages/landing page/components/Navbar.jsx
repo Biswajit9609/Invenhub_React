@@ -52,7 +52,7 @@ function Navbar() {
                 </div>
             </nav>
             <div className="h-20">
-                <ul className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-blue-950 text-white`}>
+                <ul className={`md:hidden bg-blue-950 text-white transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}> 
                     <li className="border-b-2 border-[#030348] px-5 py-2 hover:text-red-500"><h1>About Us</h1></li>
                     <li className="border-b-2 border-[#030348] px-5 py-2 hover:text-red-500"><h1>Register</h1></li>
                     <li className="border-b-2 border-[#030348] px-5 py-2 hover:text-red-500"><h1>Login</h1></li>
