@@ -1,63 +1,64 @@
 import React, { useState } from "react";
 
 function Navbar() {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
 
     return (
-        <nav className="bg-gray-800">
-            <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-                <div className="relative flex h-16 items-center justify-between">
-                    
-                    {/* Mobile Menu Button */}
-                    <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                        <button
-                            type="button"
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white"
-                            aria-controls="mobile-menu"
-                            aria-expanded={isMobileMenuOpen}
-                        >
-                            {/* Hamburger Icon */}
-                            {!isMobileMenuOpen ? (
-                                <svg className="size-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                                </svg>
-                            ) : (
-                                <svg className="size-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            )}
-                        </button>
+        <>
+            <nav className="bg-blue-950 text-white p-3 md:mx-15 md:mt-5 flex md:rounded-lg font-semibold border-b-2 border-[#030348]">
+                <div className="w-11/12 md:w-6/12">InvenHub</div>
+                <div className="flex md:gap-10 md:ml-auto">
+                    <div className="hidden md:block hover:text-red-500 hover:underline">
+                        <a href="">About Us</a>
                     </div>
-
-                    <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                        <div className="flex shrink-0 md:w-9/12">
-                            <h1 className="font-semibold text-xl text-white">InvenHub</h1>
-                        </div>
-                        <div className="hidden sm:ml-6 sm:block w-full">
-                            <div className="flex space-x-4">
-                                {/* <a href="#" className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"></a> */}
-                                <a href="#" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About Us</a>
-                                <a href="#" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Register</a>
-                                <a href="#" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Login</a>
-                            </div>
-                        </div>
+                    <div className="hidden md:block hover:text-red-500 hover:underline">
+                        <a href="">Sign-Up</a>
                     </div>
+                    <div className="hidden md:block hover:text-red-500 hover:underline">
+                        <a href="">Login</a>
+                    </div>
+                    <button
+                        className="hover:cursor-pointer md:hidden fixed"
+                        onClick={toggleMenu}
+                    >
+                        {isMenuOpen ? (
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 384 512"
+                                className="w-5"
+                            >
+                                <path
+                                    fill="#ffffff"
+                                    d="M320.7 320.7c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L192 282.3l-83.3 83.3c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L146.8 237l-83.3-83.3c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L192 191.8l83.3-83.3c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3L237.3 237l83.3 83.3z"
+                                />
+                            </svg>
+                        ) : (
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 448 512"
+                                className="w-5"
+                            >
+                                <path
+                                    fill="#ffffff"
+                                    d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+                                />
+                            </svg>
+                        )}
+                    </button>
                 </div>
+            </nav>
+            <div className="h-20">
+                <ul className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-blue-950 text-white`}>
+                    <li className="border-b-2 border-[#030348] px-5 py-2 hover:text-red-500"><h1>About Us</h1></li>
+                    <li className="border-b-2 border-[#030348] px-5 py-2 hover:text-red-500"><h1>Register</h1></li>
+                    <li className="border-b-2 border-[#030348] px-5 py-2 hover:text-red-500"><h1>Login</h1></li>
+                </ul>
             </div>
-
-            {/* Mobile Menu - Visible when state is true */}
-            {isMobileMenuOpen && (
-                <div className="sm:hidden" id="mobile-menu">
-                    <div className="space-y-1 px-2 pt-2 pb-3">
-                        {/* <a href="#" className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white">Dashboard</a> */}
-                        <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About Us</a>
-                        <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Register</a>
-                        <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Login</a>
-                    </div>
-                </div>
-            )}
-        </nav>
+        </>
     );
 }
 
