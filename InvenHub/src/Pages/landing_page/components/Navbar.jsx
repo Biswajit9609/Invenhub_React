@@ -9,7 +9,7 @@ function Navbar() {
 
     return (
         <>
-            <nav className="bg-blue-950 text-white p-3 md:mx-15 md:mt-5 flex md:rounded-lg font-semibold border-b-2 border-[#030348]">
+            <nav className="bg-blue-950 text-white py-3 px-5 md:mx-15 md:mt-5 flex md:rounded-lg font-semibold border-b-1 border-[#030348]">
                 <div className="w-11/12 md:w-6/12">InvenHub</div>
                 <div className="flex md:gap-10 md:ml-auto">
                     <div className="hidden md:block hover:text-red-500 hover:underline">
@@ -53,9 +53,9 @@ function Navbar() {
             </nav>
             <div className="h-20">
                 <ul className={`md:hidden bg-blue-950 text-white transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}> 
-                    <li className="border-b-2 border-[#030348] px-5 py-2 hover:text-red-500"><h1>About Us</h1></li>
-                    <li className="border-b-2 border-[#030348] px-5 py-2 hover:text-red-500"><h1>Register</h1></li>
-                    <li className="border-b-2 border-[#030348] px-5 py-2 hover:text-red-500"><h1>Login</h1></li>
+                    <li className="border-b-1 border-[#030348] px-7 py-2 hover:text-red-500"><h1>About Us</h1></li>
+                    <li className="border-b-1 border-[#030348] px-7 py-2 hover:text-red-500"><h1>Register</h1></li>
+                    <li className="border-b-1 border-[#030348] px-7 py-2 hover:text-red-500"><h1>Login</h1></li>
                 </ul>
             </div>
         </>
