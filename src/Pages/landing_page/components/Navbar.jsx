@@ -22,7 +22,7 @@ function Navbar() {
                         <a href="">Login</a>
                     </div>
                     <button
-                        className="hover:cursor-pointer md:hidden fixed"
+                        className="hover:cursor-pointer md:hidden"
                         onClick={toggleMenu}
                     >
                         {isMenuOpen ? (
