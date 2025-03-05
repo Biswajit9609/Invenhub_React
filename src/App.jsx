@@ -31,7 +31,7 @@ function App() {
     italic={true}
     textColor="#ffffff"
     strokeColor="#ffffff"
-    minFontSize={250}
+    minFontSize={200}
   />
 </div>
     <SplitText
@@ -49,7 +49,7 @@ function App() {
     <div  className='flex justify-center' >
     <SplitText
       text="AI Based Comprehensive Inventory Management System"
-      className="text-xl flex justify-center text-white mt-5 pb-60"
+      className="text-xl flex justify-center text-white mt-1 pb-60"
       delay={30}
       animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
       animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
